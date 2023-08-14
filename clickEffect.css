@@ -1,0 +1,13 @@
+body {
+    background: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: .3s;
+    cursor: pointer;
+}
+h1 {
+    font-size: 100px;
+}

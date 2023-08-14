@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://4kwallpapers.com/images/wallpapers/silhouette-mountain-starry-sky-night-time-purple-sky-2560x1080-4277.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 400px;
+    height: 350px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.time {
+    font-size: 45px;
+    padding: 100px;
+}
+h3 {
+    color: white;
+    animation: txt-animate 3s infinite;
+}
+@keyframes txt-animate {
+    50%   {color: aqua;}
+    100% 	{color: white;}
+}
+p {
+    color: white;
+}
+
+button {
+    font-size: 18px;
+    color: white;
+    padding: 6px 30px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: transparent;
+    cursor: pointer;
+    opacity: .5;
+    transition: .3s;
+}
+
+button:hover {
+    opacity: 1;
+}

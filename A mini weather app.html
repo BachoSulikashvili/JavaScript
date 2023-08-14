@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body {
+        background-color: aqua;
+    }
+    
+.cont {
+    display: flex;
+    max-width: 1400px;
+    transform: translate(325px, 350px);
+}
+
+.container {
+    padding-inline: 15px;
+}
+
+.card-weather {
+    width: 300px;
+    padding: 15px;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 15px;
+    background-size: 80px;
+    box-shadow: 10px 10px 10px #0000004a;
+}
+
+.card-weather > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container2 {
+    padding-inline: 15px;
+    
+}
+
+.card-weather2 {
+    transform: translateX(100px);
+    width: 300px;
+    padding: 15px;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 15px;
+    background-size: 80px;
+    box-shadow: 10px 10px 10px #0000004a;
+}
+
+.card-weather2 > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container3 {
+    padding-inline: 15px;
+    
+}
+
+.card-weather3 {
+    transform: translateX(200px);
+    width: 300px;
+    padding: 15px;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 15px;
+    background-size: 80px;
+    box-shadow: 10px 10px 10px #0000004a;
+}
+
+.card-weather3 > div {
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <div class="cont">
+    <div class="card-weather">
+        <h3>Current location</h3>
+        <h2>Paris</h2>
+        <div>
+            <span class="comment"></span>
+            <span class="temp">
+                <span class="temp-number"></span>
+                <span>C</span>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- <div class="card-weather2">
+        <h3>Current location</h3>
+        <h2>New York</h2>
+        <div>
+            <span class="comment2"></span>
+            <span class="temp2">
+                <span class="temp-number2"></span>
+                <span>C</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="card-weather3">
+        <h3>Current location</h3>
+        <h2>Dubai</h2>
+        <div>
+            <span class="comment3"></span>
+            <span class="temp3">
+                <span class="temp-number3"></span>
+                <span>C</span>
+            </span>
+        </div>
+    </div> -->
+
+
+
+
+<script>
+    // api endpoint https://weatherdbi.herokuapp.com/data/weather/tbilisi
+const tempNumber = document.querySelector('.temp-number');
+const comment = document.querySelector('.comment');
+const cardWeather = document.querySelector('.card-weather');
+
+const getWeather = async () => {
+    const { currentConditions } = await fetch('https://weatherdbi.herokuapp.com/data/weather/tbilisi').then(_ => _.json());
+    tempNumber.innerText = currentConditions.temp.c;
+    comment.innerText = currentConditions.comment;
+    cardWeather.style.backgroundImage = `url(${currentConditions.iconURL})`;
+}
+
+getWeather();
+//     const tempNumber = document.querySelector('.temp-number');
+//     const comment = document.querySelector('.comment');
+//     const cardWeather = document.querySelector('.card-weather');
+
+//     const getWeather = async () => {
+//         const { currentConditions } = await fetch('https://weatherdbi.herokuapp.com/data/weather/paris').then(_ => _.json());
+//         tempNumber.innerText = currentConditions.temp.c;
+//         comment.innerText = currentConditions.comment;
+//         cardWeather.style.backgroundImage = `url(${currentConditions.iconURL})`;
+//     }
+
+// getWeather();
+
+
+// const tempNumber2 = document.querySelector('.temp-number2');
+//     const comment2 = document.querySelector('.comment2');
+//     const cardWeather2 = document.querySelector('.card-weather2');
+
+//     const getWeather2 = async () => {
+//         const { currentConditions } = await fetch('https://weatherdbi.herokuapp.com/data/weather/newyork').then(_ => _.json());
+//         tempNumber2.innerText = currentConditions.temp.c;
+//         comment2.innerText = currentConditions.comment;
+//         cardWeather2.style.backgroundImage = `url(${currentConditions.iconURL})`;
+//     }
+
+// getWeather2();
+
+
+// const tempNumber3 = document.querySelector('.temp-number3');
+//     const comment3 = document.querySelector('.comment3');
+//     const cardWeather3 = document.querySelector('.card-weather3');
+
+//     const getWeather3 = async () => {
+//         const { currentConditions } = await fetch('https://weatherdbi.herokuapp.com/data/weather/dubai').then(_ => _.json());
+//         tempNumber3.innerText = currentConditions.temp.c;
+//         comment3.innerText = currentConditions.comment;
+//         cardWeather3.style.backgroundImage = `url(${currentConditions.iconURL})`;
+//     }
+
+// getWeather3();
+
+
+// const tempNumber4 = document.querySelector('.temp-number4');
+//     const comment4 = document.querySelector('.comment4');
+//     const cardWeather4 = document.querySelector('.card-weather4');
+
+//     const getWeather4 = async () => {
+//         const { currentConditions } = await fetch('https://weatherdbi.herokuapp.com/data/weather/telavi').then(_ => _.json());
+//         tempNumber4.innerText = currentConditions.temp.c;
+//         comment4.innerText = currentConditions.comment;
+//         cardWeather4.style.backgroundImage = `url(${currentConditions.iconURL})`;
+//     }
+</script>
+</body>
+</html>
+
+
+<!--
+
+JSON
+
+1)ჯეისონის მასივიდან ერთერთი ელემენტის გამოტანა:
+<div id="demo"></div>
+
+<script>
+    const name = '["home", "house", "apartament"]';
+    const saxlebi = JSON.parse(name);
+    document.getElementById('demo').innerHTML = saxlebi[1];
+</script>
+
+
+
+
+
+
+2)ჯეისონში თარიღის დაწერა მხოლოდ სტრინგად 
+შეიძლება და ამ მაგალითით სტრინგი გადაგვყავს თარიღად:
+<p id="dm"></p>
+
+<script>
+    const name = '{"name":"bacho", "lastname":"sulikashvili","birth":"2002-07-05"}'
+    const tt = JSON.parse(name)
+    tt.date = new Date(tt.birth)
+    document.getElementById('dm').innerHTML = tt.name + tt.lastname + ", " + tt.date;  
+</script>
+
+
+
+
+
+
+3)ჯეისონში ობიექტის და მასივის დაბეჭდვა:
+1)მასივი
+<p id="demo"></p>
+
+<script>
+const arr = ["John", "Peter", "Sally", "Jane"];
+const myJSON = JSON.stringify(arr);
+document.getElementById("demo").innerHTML = myJSON;
+</script>
+
+
+2)ობიექტი
+<p id="demo"></p>
+
+<script>
+const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+</script>
+
+
+
+
+
+4)ჯეისონში ობიექტის და მასივის რომელიმე ელემენტის გამოტანა:
+1)მასივი
+<p id="demo"></p>
+
+<script>
+const myJSON = '["Ford", "BMW", "Fiat"]';
+const myArray = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myArray[0];
+</script>
+
+
+
+
+2)ობიექტი
+<p id="demo"></p>
+
+<script>
+const myObj = {"name":"John", "age":30, "car":null};
+document.getElementById("demo").innerHTML = myObj.name;
+</script>
+
+
+
+
+
+
+5)ჯეისონში ჩამოსაშლელი სიის გამოტანა:
+<p id="demo"></p>
+
+<script>
+const dbParam = JSON.stringify({table:"customers",limit:20});
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  let text = "<select>"
+  for (let x in myObj) {
+    text += "<option>" + myObj[x].name + "</option>";
+  }
+  text += "</select>"
+  document.getElementById("demo").innerHTML = text;
+}
+xmlhttp.open("POST", "json_demo_html_table.php");
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+</script>
+
+
+
+
+
+
+
+6)ჯეისონში ჩამოსაშლელი სიის და ამ სიასთან ერთად ცხრილის გამოტანა:
+<select id="myselect" onchange="change_myselect(this.value)">
+  <option value="">Choose an option:</option>
+  <option value="customers">Customers</option>
+  <option value="products">Products</option>
+  <option value="suppliers">Suppliers</option>
+</select>
+
+<p id="demo"></p>
+
+<script>
+function change_myselect(sel) {
+  const dbParam = JSON.stringify({table:sel,limit:20});
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function() {
+    myObj = JSON.parse(this.responseText);
+    text = "<table border='1'>"
+    for (x in myObj) {
+      text += "<tr><td>" + myObj[x].name + "</td></tr>";
+    }
+    text += "</table>"    
+    document.getElementById("demo").innerHTML = text;
+  }
+  xmlhttp.open("POST", "json_demo_html_table.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+</script>
+-->
